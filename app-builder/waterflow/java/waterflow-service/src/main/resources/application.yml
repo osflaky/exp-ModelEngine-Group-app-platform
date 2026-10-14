@@ -1,0 +1,27 @@
+mybatis:
+  mapper-locations: mapper/*Mapper.xml
+
+fit:
+  beans:
+    packages:
+      - 'modelengine.fit.waterflow'
+      - 'modelengine.fitframework'
+      - 'modelengine.fit.integration'
+  messages:
+    basename: i18n/messages
+
+jane:
+  flowsEngine:
+    retry:
+      scheduleRate: 10000
+      maxCount: 0
+    isNeedFlowCallbackAdapt: false
+
+distributed-lock-provider: databaseDistributedLockProvider
+
+modelengine:
+  tenantId:
+  ownTrace: false
+  useLimit: true
+  limit: 2
+  operator:

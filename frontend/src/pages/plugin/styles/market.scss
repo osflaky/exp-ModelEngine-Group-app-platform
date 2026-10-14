@@ -1,0 +1,42 @@
+.market-block {
+  display: flex;
+  flex-direction: column;
+  border-radius: 0 0 8px 8px;
+  background: #fff !important;
+  .market-search {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    .market-input {
+      margin-bottom: 16px;
+      width: 600px;
+      height: 32px;
+      border: 1px solid rgb(230, 230, 230);
+    }
+    .market-button {
+      width: 96px;
+      height: 32px;
+      margin-left: 8px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #FFFFFF;
+      padding: 0 16px 0 16px;
+    }
+  }
+  .market-card {
+    height: calc(100vh - 320px);
+    overflow: auto;
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    align-content: flex-start;
+  }
+  .market-page {
+    padding-top: 16px;
+  }
+  .market-empty {
+    height: 100%;
+    padding-top: 100px;
+  }
+}

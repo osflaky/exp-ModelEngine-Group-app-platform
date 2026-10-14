@@ -1,0 +1,57 @@
+.apps_root {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  .apps_header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    .apps_title {
+      font-size: 20px;
+      color: #1a1a1a;
+      line-height: 1.5;
+      font-weight: normal;
+    }
+    >span {
+      font-size: 18px;
+      margin-left: 12px;
+      cursor: pointer;
+    }
+  }
+  .apps_main_market {
+    height: calc(100% - 50px);
+    min-width: 1400px;
+    padding: 24px;
+    background: #fff;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    .operatorArea {
+      display: flex;
+      align-items: center;
+      .apps-search-input {
+        width: calc(25% - 16px);
+        height: 35px;
+      }
+    }
+    .card_list {
+      max-height: calc(100vh - 360px);
+      overflow-y: auto;
+      display: flex;
+      flex-wrap: wrap;
+      margin: 16px 0;
+      gap: 16px;
+      .card_box {
+        width: calc(25% - 16px);
+        height: 190px;
+      }
+    }
+  }
+  .empty-box {
+    width: 100%;
+    margin: 100px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

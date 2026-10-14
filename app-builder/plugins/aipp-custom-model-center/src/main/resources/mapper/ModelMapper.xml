@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="modelengine.fit.jade.aipp.model.mapper.ModelMapper">
+    <resultMap id="BaseResultMap" type="modelengine.fit.jade.aipp.model.po.ModelPo">
+        <id property="id" column="id"/>
+        <result property="modelId" column="model_id"/>
+        <result property="name" column="name"/>
+        <result property="tag" column="tag"/>
+        <result property="baseUrl" column="base_url"/>
+        <result property="type" column="type"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        model_id, name, tag, base_url, type
+    </sql>
+
+    <select id="getModel" resultType="modelengine.fit.jade.aipp.model.po.ModelPo" resultMap="BaseResultMap">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM t_app_engine_model
+        WHERE model_id = #{modelId}
+    </select>
+    <select id="listModels" resultType="modelengine.fit.jade.aipp.model.po.ModelPo"  resultMap="BaseResultMap">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM t_app_engine_model
+        WHERE model_id in
+        <foreach item="item" index="index" collection="modelIds" open="(" separator="," close=")">
+            #{item}
+        </foreach>
+    </select>
+
+    <insert id="insertModel" parameterType="modelengine.fit.jade.aipp.model.po.ModelPo">
+        INSERT INTO t_app_engine_model (model_id, name, tag, base_url, type, created_by, updated_by)
+        VALUES (#{modelId}, #{name}, #{tag}, #{baseUrl}, #{type}, #{createdBy}, #{updatedBy})
+    </insert>
+
+    <delete id="deleteByModelId">
+        DELETE FROM t_app_engine_model
+        WHERE model_id = #{modelId}
+    </delete>
+</mapper>

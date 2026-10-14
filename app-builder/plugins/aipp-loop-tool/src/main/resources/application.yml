@@ -1,0 +1,8 @@
+fit:
+  beans:
+    packages:
+      - 'modelengine.fit.jade.aipp.tool.loop'
+
+loop-call:
+  cache:
+    duration: 30000
